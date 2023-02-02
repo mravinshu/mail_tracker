@@ -6,11 +6,12 @@ from psycopg2._psycopg import Column
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Table, Column, Integer, String, DateTime, MetaData
-
+from flask_cors import CORS
 from track_orm import MailTrack
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 # connect to db
 url = 'postgresql://tracker_6oxo_user:vtt49y1VVO7JZQ44R1gWbJQl5LGWAedn@dpg-cfdvljo2i3mmlo4v2ar0-a.oregon-postgres.render.com/tracker_6oxo'
