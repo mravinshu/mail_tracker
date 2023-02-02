@@ -14,8 +14,9 @@ api = Api(app)
 
 # connect to db
 url = 'postgresql://tracker_6oxo_user:vtt49y1VVO7JZQ44R1gWbJQl5LGWAedn@dpg-cfdvljo2i3mmlo4v2ar0-a.oregon-postgres.render.com/tracker_6oxo'
+internal_url = 'postgres://tracker_6oxo_user:vtt49y1VVO7JZQ44R1gWbJQl5LGWAedn@dpg-cfdvljo2i3mmlo4v2ar0-a/tracker_6oxo'
 test_url = 'postgresql://postgres: @localhost/tracker'
-engine = create_engine(url, echo=True)
+engine = create_engine(internal_url, echo=True)
 Session = sessionmaker(bind=engine)
 session = Session()
 
