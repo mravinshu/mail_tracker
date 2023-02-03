@@ -1,0 +1,27 @@
+<!-- Write a html js code that hits a post api with payload every 2 seconds -->
+
+<html>
+
+<head>
+    <script>
+        function myFunction() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("POST", "https://mail-tracker.onrender.com", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.send(JSON.stringify({
+                "mail_id": 4
+            }));
+            setTimeout(myFunction, 2000);
+        }
+    </script>
+</head>
+
+<body onload="myFunction()"></body>
+
+</html>
